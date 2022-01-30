@@ -4,9 +4,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 export const Table = () => {
-    const actionButton = (params) =>{
-        console.log(params)
-    }
+    
     const data = [
         {name : "Vinay", age:24 , salery: 300000 },
         {name : "Bhavani", age:23, salery: 350000 },
@@ -18,10 +16,7 @@ export const Table = () => {
         {headerName:'Name', field:"name"},
         {headerName:'Age', field:"age"},
         {headerName:'Salery', field:"salery"},
-        {headerName:'Action', field:"salery", 
-        cellRendererFramework:(params) => <div>
-            <button onClick={actionButton(params)}>Click me</button>
-        </div> },
+        
     ]
 
     const defaultColDef={
