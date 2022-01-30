@@ -18,8 +18,9 @@ export const Table = () => {
         {headerName:'Name', field:"name"},
         {headerName:'Age', field:"age"},
         {headerName:'Salery', field:"salery"},
-        {headerName:'Action', field:"salery", 
-        cellRendererFramework:(params) => <div>
+        {headerName:'Action',
+        cellRendererFramework:(params) => 
+        <div>
             <button onClick={actionButton(params)}>Click me</button>
         </div> },
     ]
@@ -28,24 +29,15 @@ export const Table = () => {
         sortable: true, editable: true, filter: true, floatingFilter: true, flex:1
     }
 
-    let gridApi = "";
-    const onGridReady = (params) =>{
-        gridApi = params.api
-    }
-
-    const onExportClick = () =>{
-        gridApi.exportDataAsCsv()
-    }
-
+    
     return(
         <div>
-            <button onClick={() => onExportClick()}>export</button>
             <div id="myGrid" className='ag-theme-alpine' style={{height:"250px", width:"600px"}} >
                 <AgGridReact 
                 rowData = {data} 
                 columnDefs={columns} 
                 defaultColDef={defaultColDef} 
-                onGridReady={onGridReady} />
+                />
             </div>
         </div>
     )
