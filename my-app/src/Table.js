@@ -14,13 +14,13 @@ export const Table = () => {
     ]
     const columns =[
         {headerName:'Name', field:"name"},
-        {headerName:'Age', field:"age"},
+        {headerName:'Age', field:"age", tooltipField:"name"},
         {headerName:'Salery', field:"salery"},
         
     ]
 
     const defaultColDef={
-        sortable: true, editable: true, filter: true, floatingFilter: true, flex:1
+        sortable: true, editable: true, filter: true, floatingFilter: true, flex:1, tooltipField:"name"
     }
 
     let gridApi = "";
@@ -40,7 +40,10 @@ export const Table = () => {
                 rowData = {data} 
                 columnDefs={columns} 
                 defaultColDef={defaultColDef} 
-                onGridReady={onGridReady} />
+                onGridReady={onGridReady} 
+                enableBrowserTooltips={true}
+                tooltipShowDelay = {{tooltipShowDelay:2}}
+                />
             </div>
         </div>
     )
