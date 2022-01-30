@@ -1,0 +1,8 @@
+.moreThen20{
+    /*border-left: 4px green solid;*/
+    background-color: green;
+}
+.lessThen20{
+    /*border-left: 4px red solid;*/
+    background-color: red;
+}
