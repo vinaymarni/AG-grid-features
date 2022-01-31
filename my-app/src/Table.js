@@ -10,12 +10,12 @@ export const Table = () => {
         {name : "Bhavani", age:23, salery: 350000 },
         {name : "Achyuth", age:24, salery: 360000 },
         {name : "Sanjey", age:25, salery: 370000 },
-        {name : "Sai", age:26, salery: 380000 }
+        {name : "Sai", age:26, salery: 380000}
     ]
     const columns =[
         {headerName:'Name', field:"name"},
         {headerName:'Age', field:"age", tooltipField:"name"},
-        {headerName:'Salery', field:"salery"},
+        {headerName:'Salery', field:"salery", hide: false },
         
     ]
 
@@ -32,6 +32,7 @@ export const Table = () => {
         gridApi.exportDataAsCsv()
     }
 
+   
     return(
         <div>
             <button onClick={() => onExportClick()}>export</button>
