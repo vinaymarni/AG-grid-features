@@ -5,7 +5,7 @@ import  Table  from './Table';
 function App (){
     return(
         <div className='app'>
-            <h1>React-App</h1>
+            <h1>AG-Grid App</h1>
             <Table />
         </div>
     )

@@ -45,8 +45,8 @@ const Table = () => {
         data.setQuickFilter(e.target.value)
     } 
     return(
-      <div ag-grid="gridOptions" className='ag-theme-alpine' style={{height : '95vh' , width : '95vw'}}>
-        <div style={{margin: "10px"}}>
+      <div ag-grid="gridOptions" className='ag-theme-alpine' style={{height : '95vh' , width : '95vw', marginLeft: "10px"}}>
+        <div style={{ backgroundColor: '#919291', padding : "10px"}}>
          <select onChange={(e) => onPageChange(e.target.value)} style={{width : '100px' , height : '25px', borderRadius: "15PX", paddingLeft: "7px", paddingRight: "7px"}}>
               <option value='25'>25</option>
               <option value='50'>50</option>
