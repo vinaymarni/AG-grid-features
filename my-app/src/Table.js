@@ -8,7 +8,7 @@ export const Table = () => {
         {headerName:'ID', field:"id", checkboxSelection: true, headerCheckboxSelection: true },
         {headerName:'Name', field:"name"},
         {headerName:'Email', field:"email"},
-        {headerName:'Body', field:"body"},
+        {headerName:'Body', field:"body", hide: true},
     ]
 
     const defaultColDef={
@@ -34,11 +34,12 @@ export const Table = () => {
         console.log(event.api.getSelectedRows())
     }
 
-    
+   
 
     return(
     <div style={{margin: "20px"}}>
             <h3>Student Details</h3>
+           
             <select onChange={(e) => onPaginationChange(e.target.value) }>
                 <option value = "0">0</option>
                 <option value = "10">10</option>
@@ -49,17 +50,17 @@ export const Table = () => {
             </select>
             <div id="myGrid" className='ag-theme-alpine' style={{height:"350px"}} >
                 <AgGridReact 
-                columnDefs={columns} 
-                defaultColDef={defaultColDef} 
-                onGridReady={onGridReady} 
-                enableBrowserTooltips={true}
-                tooltipShowDelay = {{tooltipShowDelay:2}}
-                rowSelection={rowSelectionType}
-                onSelectionChanged = {onSelectionChanged}
-                rowMultiSelectWithClick ={true}
-                pagination = {true}
-                paginationPageSize = {10}
-                //paginationAutoPageSize = {true}
+                    columnDefs={columns} 
+                    defaultColDef={defaultColDef} 
+                    onGridReady={onGridReady} 
+                    enableBrowserTooltips={true}
+                    tooltipShowDelay = {{tooltipShowDelay:2}}
+                    rowSelection={rowSelectionType}
+                    onSelectionChanged = {onSelectionChanged}
+                    rowMultiSelectWithClick ={true}
+                    pagination = {true}
+                    paginationPageSize = {10}
+                    //paginationAutoPageSize = {true}
                 >
                 </AgGridReact>
             </div>
